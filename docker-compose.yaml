@@ -37,7 +37,7 @@ services:
       - internal
       - proxy
     depends_on:
-      mariadb:
+      - mariadb
   nginx:
     container_name: nginx
     build:
