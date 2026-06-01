@@ -1,0 +1,7 @@
+.env
+docker/*/logs
+docker/*/data
+docker/nextcloud/html
+docker/nginx/certs
+docker/nginx/config/conf.d
+docker-compose.yml

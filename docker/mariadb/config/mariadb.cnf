@@ -1,0 +1,39 @@
+[client]
+default-character-set = utf8mb4
+
+[mysqld]
+# 基本設定
+user = mysql
+pid-file = /var/run/mysqld/mysqld.pid
+socket = /var/run/mysqld/mysqld.sock
+datadir = /var/lib/mysql
+
+# 編碼與連線
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+skip-name-resolve
+max_connections = 200
+connect_timeout = 10
+wait_timeout = 600
+
+# InnoDB 儲存引擎
+innodb_file_per_table = 1
+innodb_buffer_pool_size = 512M
+innodb_log_file_size = 128M
+innodb_flush_method = O_DIRECT
+
+# Binary Log
+server-id = 1
+log_bin = /var/log/mysql/mysql-bin.log
+binlog_format = ROW
+expire_logs_days = 10
+sync_binlog = 1
+
+# General Log & Error Log
+log_error = /var/log/mysql/error.log
+slow_query_log = 1
+slow_query_log_file = /var/log/mysql/slow.log
+long_query_time = 1
+
+[mysql]
+default-character-set = utf8mb4
