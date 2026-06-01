@@ -35,3 +35,9 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 echo "自簽憑證已生成："
 echo "憑證檔案：$CERT_DIR/selfsigned.crt"
 echo "金鑰檔案：$CERT_DIR/selfsigned.key"
+
+echo "修復 mariadb 權限問題"
+mkdir -p ./docker/mariadb/logs
+sudo chmod 766 ./docker/mariadb/logs
+sudo chown -R 999:999 ./docker/mariadb/logs
+
